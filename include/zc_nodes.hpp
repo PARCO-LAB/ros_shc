@@ -108,7 +108,10 @@ public:
 
 private:
     /* ===================== EDIT HERE ================================== */
+    // Standard copy version: 
     void callback(const ros_shc::msg::InputData::SharedPtr in_msg)
+    // Zero copy: 
+    // void callback(const namespace::type::UniquePtr in_msg)
     /* ================================================================== */
     {
         std::size_t N = in_msg->mat1.layout.dim[0].size;
@@ -179,10 +182,7 @@ public:
 
 private:
     /* ===================== EDIT HERE ================================== */
-    // Standard copy version: 
     void callback(const ros_shc::msg::InputData::SharedPtr in_msg)
-    // Zero copy: 
-    // void callback(const namespace::type::UniquePtr in_msg)
     /* ================================================================== */
     {
         std::size_t N = in_msg->mat1.layout.dim[0].size;
